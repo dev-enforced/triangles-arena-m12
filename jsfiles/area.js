@@ -56,6 +56,7 @@ function calculateAreaOfTriangle(event){
 
         outputDiv3.style.display='block';
         outputMessage3.innerText=`The area of a triangle whose side lengths are of ${a} units,${b} units and ${c} units is ${area} sq.units.`
+        outputMessage3.style.color='#0A1931';
     }
     else{
         outputDiv3.style.display='block';
