@@ -1,57 +1,57 @@
-var form1=document.querySelector("#form1");
-var form2=document.querySelector("#form2");
-var form3=document.querySelector("#form3");
-var form4=document.querySelector("#form4");
+const form1=document.querySelector("#form1");
+const form2=document.querySelector("#form2");
+const form3=document.querySelector("#form3");
+const form4=document.querySelector("#form4");
 
-var outputDiv1=document.querySelector(".m1");
-var outputDiv2=document.querySelector(".m2");
-var outputDiv3=document.querySelector(".m3");
-var outputDiv4=document.querySelector(".m4");
+const outputDiv1=document.querySelector(".m1");
+const outputDiv2=document.querySelector(".m2");
+const outputDiv3=document.querySelector(".m3");
+const outputDiv4=document.querySelector(".m4");
 
-var outputMessage1=document.querySelector(".mess1");
-var outputMessage2=document.querySelector(".mess2");
-var outputMessage3=document.querySelector(".mess3");
-var outputMessage4=document.querySelector(".mess4");
+const outputMessage1=document.querySelector(".mess1");
+const outputMessage2=document.querySelector(".mess2");
+const outputMessage3=document.querySelector(".mess3");
+const outputMessage4=document.querySelector(".mess4");
 
 
-var base=document.querySelector("#base");
-var height=document.querySelector("#height");
+const base=document.querySelector("#base");
+const height=document.querySelector("#height");
 
-function calculateAreaForRightTriangle(event){
+const calculateAreaForRightTriangle=(event)=>{
     event.preventDefault();
-    var b=Number(base.value);
-    var h=Number(height.value);
+    let b=Number(base.value);
+    let h=Number(height.value);
 
-    var area=(b*h)/2
+    let area=(b*h)/2
     area=area.toFixed(2);
     outputDiv1.style.display='block';
     outputMessage1.innerText=`The area of a triangle whose base is ${b} units and height is ${h} units is ${area} sq.units`
 }
 
-var side=document.querySelector("#side")
-function calculateAreaForEquilateralTriangle(event){
+const side=document.querySelector("#side")
+const calculateAreaForEquilateralTriangle=(event)=>{
     event.preventDefault();
-    var a=Number(side.value)
+    let a=Number(side.value)
 
-    var area=(Math.pow(a,2)*Math.pow(3,0.5))/4;
+    let area=(Math.pow(a,2)*Math.pow(3,0.5))/4;
     area=area.toFixed(2);
     outputDiv2.style.display='block';
     outputMessage2.innerText=`The area of an equilateral triangle whose each side length is of ${a} units is ${area} sq.units.`
 }
 
-var side1=document.querySelector("#side1");
-var side2=document.querySelector("#side2");
-var side3=document.querySelector("#side3");
+const side1=document.querySelector("#side1");
+const side2=document.querySelector("#side2");
+const side3=document.querySelector("#side3");
 
-function calculateAreaOfTriangle(event){
+const calculateAreaOfTriangle=(event)=>{
     event.preventDefault();
-    var a=Number(side1.value);
-    var b=Number(side2.value);
-    var c=Number(side3.value);
+    let a=Number(side1.value);
+    let b=Number(side2.value);
+    let c=Number(side3.value);
     if((a+b>c)&&(b+c>a)&&(c+a>b)){
-        var s=(a+b+c)/2;
-        var product=s*(s-a)*(s-b)*(s-c);
-        var area=Math.pow(product,0.5);
+        let s=(a+b+c)/2;
+        let product=s*(s-a)*(s-b)*(s-c);
+        let area=Math.pow(product,0.5);
         area=area.toFixed(2);
 
         outputDiv3.style.display='block';
@@ -66,20 +66,20 @@ function calculateAreaOfTriangle(event){
     
 }
 
-var sideAngle1=document.querySelector("#side-angle1");
-var sideAngle2=document.querySelector("#side-angle2");
-var angle1=document.querySelector("#angle1");
+const sideAngle1=document.querySelector("#side-angle1");
+const sideAngle2=document.querySelector("#side-angle2");
+const angle1=document.querySelector("#angle1");
 
-function calculateAreaOfTriangleProvided(event){
+const calculateAreaOfTriangleProvided=(event)=>{
     event.preventDefault();
-    var s1 = Number(sideAngle1.value);
-    var s2 = Number(sideAngle2.value);
-    var ang1=Number(angle1.value);
+    let s1 = Number(sideAngle1.value);
+    let s2 = Number(sideAngle2.value);
+    let ang1=Number(angle1.value);
 
-    var rad1=(Math.PI*ang1)/180;
-    var sinAng=Math.sin(rad1);
+    let rad1=(Math.PI*ang1)/180;
+    let sinAng=Math.sin(rad1);
 
-    var area=(s1*s2*sinAng)/2;
+    let area=(s1*s2*sinAng)/2;
     area=area.toFixed(2);
 
     outputDiv4.style.display='block';

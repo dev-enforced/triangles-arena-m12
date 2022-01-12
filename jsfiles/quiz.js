@@ -1,15 +1,15 @@
-var form=document.querySelector(".main-body");
-var submitBtn=document.querySelector("#btn-submit");
-var score=0;
-var correctAnswers=["0","Right Angled","8","180°","Equilateral","31°","Right","Isosceles"]
-var outputDiv=document.querySelector(".main-message")
-var outputMsg=document.querySelector("#output-short");
-var quesContainer=document.querySelectorAll(".question-details")
+const form=document.querySelector(".main-body");
+const submitBtn=document.querySelector("#btn-submit");
+let score=0;
+const correctAnswers=["0","Right Angled","8","180°","Equilateral","31°","Right","Isosceles"]
+const outputDiv=document.querySelector(".main-message")
+const outputMsg=document.querySelector("#output-short");
+const quesContainer=document.querySelectorAll(".question-details")
 
 
-function checkAllQuestionsAttempted(attempted_values){
-    var index=0;
-    for(var value of attempted_values){
+const checkAllQuestionsAttempted=(attempted_values)=>{
+    let index=0;
+    for(let value of attempted_values){
         index+=1;
     }
     if(index===correctAnswers.length){
@@ -22,8 +22,8 @@ function checkAllQuestionsAttempted(attempted_values){
 function submitHandler(e){
     e.preventDefault();
     score=0
-    var index=0;
-    var formResults=new FormData(form);
+    let index=0;
+    let formResults=new FormData(form);
     if(checkAllQuestionsAttempted(formResults.values())){
         for (let value of formResults.values()){
             if(value===correctAnswers[index]){
@@ -40,7 +40,7 @@ function submitHandler(e){
 }
 form.addEventListener("submit",(e)=>submitHandler(e))
 form.addEventListener("click",function reattempt(){
-    for(var q of quesContainer){
+    for(let q of quesContainer){
         q.style.background='#0A1931'
     }
     outputDiv.style.display='none'
